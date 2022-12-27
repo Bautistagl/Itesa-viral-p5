@@ -358,11 +358,11 @@ const WalletCard = () => {
                   {" "}
                   ◉ Posicion en el ranking: {ranking}
                 </Text>
-                <Text fontSize={"sm"}> ◉ Puntos: {currentAwards.awards}</Text>
+                <Text fontSize={"sm"}> ◉ Puntos:</Text>
                 {nextMilestone.id ? (
                   <Text fontSize={"sm"}>
                     ◉ Te falta(n){" "}
-                    {nextMilestone.quantityCondition - currentAwards.awards}{" "}
+                   {" "}
                     punto(s) para el próximo Milestone!!
                   </Text>
                 ) : (

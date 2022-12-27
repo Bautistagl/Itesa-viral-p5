@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { client } from "../../supabase/client";
 
 export default function Registro() {
   const nickName = handleInput();
@@ -99,6 +100,14 @@ export default function Registro() {
         password: password.value,
         referring: referedCode.value,
       };
+     
+        const respuesta = await client.from("Users").insert({
+          email: email.value,
+          password: password.value,
+          nick_name: nickName.value,
+          referring: referedCode.value,
+        });
+     
       const created = await axios
         .post("/newUser", newUser)
         .then(() => router.push("/login"))
